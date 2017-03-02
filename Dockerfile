@@ -28,7 +28,7 @@ COPY run.sh /home/minecraft/run.sh
 RUN touch /root/.bash_profile
 RUN chmod 777 /home/minecraft/run.sh
 RUN mkdir  /data
-RUN chown steam -R /data && chmod 755 -R /data
+RUN chown minecraft -R /data && chmod 755 -R /data
 # ================= #
 
 # ==== Version ==== #
