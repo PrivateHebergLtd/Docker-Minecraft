@@ -1,18 +1,43 @@
+# ==================
+#   MC Dockerfile
+#   PrivateHeberg©
+# ==================
+
 FROM nimmis/java:openjdk-8-jdk
-MAINTAINER PrivateHeberg
+MAINTAINER privateHeberg
 
-ENV DEBIAN_FRONTEND noninteractive
+# ==== Variables ==== #
+ENV VERSION=""
+# =================== #
 
-ENV JAR_FILE $jar
-ENV SERVER_HOME $dir
-ENV MAX_RAM $ram
+# ==== Paquets ==== #
+RUN apt-get update
+# ================= #
 
-ADD start.sh /start.sh
+# ==== Steam user ==== #
+RUN adduser \
+	--disabled-login \
+	--shell /bin/bash \
+	--gecos "" \
+	minecraft
+RUN usermod -a -G sudo minecraft
+# ==================== #
 
-RUN chmod +x /start.sh
-RUN apt-get update && apt-get install -y wget git && apt-get clean all
-RUN useradd -s /bin/bash -d $dir -m minecraft
+# ==== Scripts ==== #
+COPY run.sh /home/minecraft/run.sh
+RUN touch /root/.bash_profile
+RUN chmod 777 /home/minecraft/run.sh
+RUN mkdir  /data
+RUN chown steam -R /data && chmod 755 -R /data
+# ================= #
 
-EXPOSE $port
+# ==== Version ==== #
+COPY run.sh /home/minecraft/run.sh
+# ================== #
 
-CMD /start.sh
+# ==== Volumes ==== #
+VOLUME  /data
+WORKDIR /data
+# ================= #
+
+ENTRYPOINT ["/home/minecraft/run.sh"]
