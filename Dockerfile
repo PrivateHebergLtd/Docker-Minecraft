@@ -33,7 +33,7 @@ RUN chown minecraft -R /data && chmod 755 -R /data
 # ================= #
 
 # ==== Version ==== #
-COPY run.sh /home/minecraft/run.sh
+
 # ================== #
 
 # ==== Volumes ==== #
