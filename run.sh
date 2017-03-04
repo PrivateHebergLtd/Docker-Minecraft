@@ -9,8 +9,7 @@ cd /data
 # Copier les configs pour chaque jeu
 if [ ${VERSION} != "OpenMOD" ];then
 echo "--- Download version... ---"
-wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.zip
-unzip ${VERSION}.zip && rm ${VERSION}.zip
+wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.zip && unzip ${VERSION}.zip && rm ${VERSION}.zip
 fi
 
 # Création des dossiers
