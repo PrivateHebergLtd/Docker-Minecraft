@@ -9,7 +9,7 @@ cd /data
 # Dossier template pour stocker les dossier de config vanilla
 [ ! -d /data/template ] && mkdir /data/template
 # Copier les configs pour chaque jeu
-wget ${VERSION}.jar
+wget https://cdn.privateheberg.com/Minecraft/Version/${VERSION}.zip
 cp ${VERSION}.jar /data/template/spigot.jar
 
 # Création des dossiers
