@@ -12,8 +12,7 @@ cd /data
 if [ ${VERSION} != "OpenMOD" ];then
 echo "--- Download version... ---"
 wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.zip
-cp ${VERSION}.zip /data/game
-cd /data/game && unzip ${VERSION}.zip && rm ${VERSION}.zip
+unzip ${VERSION}.zip && rm ${VERSION}.zip
 fi
 
 # Création des dossiers
@@ -26,4 +25,4 @@ if [ ! -d /data/game  ] || [ ! -f /data/game ];then
 fi
 
 echo "--- Démarrage du serveur ---"
-cd /data/game && java -d64 -XX:NewRatio=3 -XX:+UseThreadPriorities -XX:SoftRefLRUPolicyMSPerMB=2048 -XX:CMSInitiatingOccupancyFraction=90 -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:MaxGCPauseMillis=50 -XX:ParallelGCThreads=4 -XX:+UseAdaptiveGCBoundary -XX:-UseGCOverheadLimit -XX:+UseBiasedLocking -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=15 -oss4M -ss4M -XX:UseSSE=4 -XX:+UseLargePages -XX:+UseCompressedOops -XX:+OptimizeStringConcat -XX:+UseFastAccessorMethods -XX:+AggressiveOpts -jar server.jar
+java -d64 -XX:NewRatio=3 -XX:+UseThreadPriorities -XX:SoftRefLRUPolicyMSPerMB=2048 -XX:CMSInitiatingOccupancyFraction=90 -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:MaxGCPauseMillis=50 -XX:ParallelGCThreads=4 -XX:+UseAdaptiveGCBoundary -XX:-UseGCOverheadLimit -XX:+UseBiasedLocking -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=15 -oss4M -ss4M -XX:UseSSE=4 -XX:+UseLargePages -XX:+UseCompressedOops -XX:+OptimizeStringConcat -XX:+UseFastAccessorMethods -XX:+AggressiveOpts -jar server.jar
