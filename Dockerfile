@@ -11,10 +11,11 @@ ENV VERSION=""
 # =================== #
 
 # ==== Paquets ==== #
-RUN apt-get update
+RUN apt-get update &&\
+    apt-get install -y zip
 # ================= #
 
-# ==== Steam user ==== #
+# ==== Minecraft user ==== #
 RUN adduser \
 	--disabled-login \
 	--shell /bin/bash \
