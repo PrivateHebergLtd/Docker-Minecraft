@@ -6,8 +6,6 @@ echo "#######################################"
 # On va dans la parti. data
 cd /data
 
-# Dossier template pour stocker les dossier de config vanilla
-[ ! -d /data/template ] && mkdir /data/template
 # Copier les configs pour chaque jeu
 if [ ${VERSION} != "OpenMOD" ];then
 echo "--- Download version... ---"
