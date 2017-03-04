@@ -9,7 +9,7 @@ cd /data
 # Dossier template pour stocker les dossier de config vanilla
 [ ! -d /data/template ] && mkdir /data/template
 # Copier les configs pour chaque jeu
-if [${VERSION} != "OpenMOD"]
+if [ ${VERSION} != "OpenMOD" ];then
 echo "--- Download version... ---"
 wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.zip
 cp ${VERSION}.zip /data/game
