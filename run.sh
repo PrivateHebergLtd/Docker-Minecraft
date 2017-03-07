@@ -20,8 +20,16 @@ fi
 
 # Téléchargement du jar du serveur
 if [ ${VERSION} != "OpenMOD" ];then
+echo "--- Deleting old server.jar... ---"
+rm server.jar
 echo "--- Download version... ---"
 wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.jar && mv ${VERSION}.jar server.jar
+else
+if [ ! -e "server.jar" ];then
+echo "--- server.jar not found ---"
+echo "--- Downloading Spigot 1.8 version ---"
+wget https://cdn.privateheberg.com/Minecraft/Versions/Spigot_1.8.jar && mv Spigot_1.8.jar server.jar
+fi
 fi
 
 # Création des dossiers
