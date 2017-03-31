@@ -9,12 +9,12 @@ cd /data
 # Téléchargement d'une template si elle n'existe pas
 if [ ! -e "server.properties" ];then
 echo "--- Download template... ---"
-if [[ $string =~ .*Spigot.* ]];then
+if [[ ${VERSION} =~ .*Spigot.* ]];then
    echo "--- Template Spigot ---"
-   wget https://cdn.privateheberg.com/Minecraft/Templates/Spigot.zip && unzip Spigot.zip && rm Spigot.zip
+   wget https://cdn.privateheberg.fr/Minecraft/Templates/Spigot.zip && unzip Spigot.zip && rm Spigot.zip
 else
    echo "--- Template Vanilla ---"
-   wget https://cdn.privateheberg.com/Minecraft/Templates/Vanilla.zip && unzip Vanilla.zip && rm Vanilla.zip
+   wget https://cdn.privateheberg.fr/Minecraft/Templates/Vanilla.zip && unzip Vanilla.zip && rm Vanilla.zip
 fi
 fi
 
@@ -23,12 +23,12 @@ if [ ${VERSION} != "OpenMOD" ];then
 echo "--- Deleting old server.jar... ---"
 rm server.jar
 echo "--- Download version... ---"
-wget https://cdn.privateheberg.com/Minecraft/Versions/${VERSION}.jar && mv ${VERSION}.jar server.jar
+wget https://cdn.privateheberg.fr/Minecraft/Versions/${VERSION}.jar && mv ${VERSION}.jar server.jar
 else
 if [ ! -e "server.jar" ];then
 echo "--- server.jar not found ---"
 echo "--- Downloading Spigot 1.8 version ---"
-wget https://cdn.privateheberg.com/Minecraft/Versions/Spigot_1.8.jar && mv Spigot_1.8.jar server.jar
+wget https://cdn.privateheberg.fr/Minecraft/Versions/Spigot_1.8.jar && mv Spigot_1.8.jar server.jar
 fi
 fi
 
