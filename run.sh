@@ -44,7 +44,7 @@ tmux new -s Server "$COMMAND"
 }
 
 case "$1" in
-    console)
+    run)
         shift 1
         run
         ;;
