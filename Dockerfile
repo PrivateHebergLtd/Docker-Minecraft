@@ -50,3 +50,4 @@ WORKDIR /data
 # ================= #
 
 ENTRYPOINT ["/home/minecraft/run.sh"]
+CMD ["run"]
