@@ -12,7 +12,7 @@ ENV VERSION=""
 # =================== #
 
 # ==== Paquets ==== #
-RUN apt-get update && apt-get install -y zip sudo screen
+RUN apt-get update && apt-get install -y zip sudo tmux
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee /etc/apt/sources.list.d/webupd8team-java.list
 RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
