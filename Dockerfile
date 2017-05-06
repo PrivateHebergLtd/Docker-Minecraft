@@ -21,8 +21,6 @@ RUN apt-get update && apt-get -y install oracle-java8-installer
 # ================= #
 
 # ==== Timezone ==== #
-RUN echo "Europe/Paris" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
- && cp /etc/timezone /tz/ && cp /etc/localtime /tz/
 # ================= #
 
 # ==== Minecraft user ==== #
